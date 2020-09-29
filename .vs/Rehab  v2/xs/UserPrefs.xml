@@ -1,0 +1,27 @@
+﻿<Properties StartupConfiguration="{2F23F5D8-10B5-96FE-6449-A5D5DBF50AEF}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/CashierManager.cs">
+    <Files>
+      <File FileName="Assets/Scripts/CashierManager.cs" Line="9" Column="6" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Rehab  v2" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Scripts" expanded="True">
+                <Node name="CashierManager.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="61d9b4a4-e7b2-4884-b800-b84901c9ecb8" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
