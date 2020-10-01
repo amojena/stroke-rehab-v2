@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 
 public class Belt : MonoBehaviour
@@ -21,6 +22,7 @@ public class Belt : MonoBehaviour
 
 
     float spawnTime;
+    List<GameObject> itemsToMove = new List<GameObject>();
 
 
 
@@ -33,6 +35,7 @@ public class Belt : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Timer to spawn items
         if (spawnTime >= spawnDelay)
         {
             SpawnItem();
@@ -40,19 +43,35 @@ public class Belt : MonoBehaviour
         }
 
         spawnTime += Time.deltaTime;
+
+        MoveItemsOnBelt();
         
+    }
+
+    void MoveItemsOnBelt()
+    {
+        foreach(GameObject item in itemsToMove)
+        {
+            item.transform.position = Vector3.Lerp(item.transform.position, endOfBelt.transform.position, speedFactor * Time.deltaTime);
+        }
     }
 
     void SpawnItem()
     {
+        // Pick random item to spawn
         int randomIndex = Random.Range(0, 1000) % items.Length;
         GameObject itemToSpawn = items[randomIndex];
         Instantiate(itemToSpawn, fruitOrigin.transform.position, itemToSpawn.transform.rotation);
     }
 
-    void OnTriggerStay(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        other.gameObject.transform.position = Vector3.MoveTowards(other.gameObject.transform.position, endOfBelt.transform.position, speedFactor * Time.deltaTime);
-        Debug.Log(other.gameObject.name);
+        itemsToMove.Add(collision.gameObject);
     }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        itemsToMove.Remove(collision.gameObject);
+    }
+
 }
