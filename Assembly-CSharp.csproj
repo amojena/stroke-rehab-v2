@@ -394,6 +394,7 @@
     <Compile Include="Assets\Scripts\Belt.cs" />
     <Compile Include="Assets\Scripts\CashierSceneManager.cs" />
     <Compile Include="Assets\Scripts\Crate.cs" />
+    <Compile Include="Assets\Scripts\Floor.cs" />
     <None Include="Assets\Oculus\SampleFramework\Usage\HandsTrainExample\Shaders\XingLightShader.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\Oculus\Avatar\Resources\Materials\AvatarMaterialStateShader.cginc" />

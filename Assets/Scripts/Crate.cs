@@ -8,17 +8,22 @@ public class Crate : MonoBehaviour
     Material correctMaterial;
     [SerializeField]
     Material incorrectMaterial;
+    [SerializeField]
+    Crate[] otherCrates;
     
     int correctItems;
     int incorrectItems;
     Material originalMaterial;
+    List<GameObject> itemsInCrate;
 
     // Start is called before the first frame update
     void Start()
     {
         correctItems = 0;
         incorrectItems = 0;
+        itemsInCrate = new List<GameObject>();
         originalMaterial = gameObject.GetComponent<MeshRenderer>().material;
+
     }
 
     // Update is called once per frame
@@ -29,6 +34,11 @@ public class Crate : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        // Don't do anything if the item has alredy collided with this crate or others
+        if (ItemInCreates(collision.gameObject)) return;
+
+        itemsInCrate.Add(collision.gameObject);
+
         if (gameObject.CompareTag(collision.gameObject.tag))
         {
             correctItems++;
@@ -56,6 +66,30 @@ public class Crate : MonoBehaviour
     public int GetIncorrectItemScore()
     {
         return incorrectItems;
+    }
+
+    public int getNumOfItemsInCrate()
+    {
+        return itemsInCrate.Count;
+    }
+
+    public void DestroyItems()
+    {
+        //Set active or destroy?
+        foreach (GameObject item in itemsInCrate)
+            item.SetActive(false);
+    }
+
+    public bool IsItemInCrate(GameObject item)
+    {
+        return itemsInCrate.Contains(item);
+    }
+    public bool ItemInCreates(GameObject item)
+    {
+        bool ret = IsItemInCrate(item);
+        foreach (Crate crate in otherCrates)
+            ret = ret || crate.IsItemInCrate(item);
+        return ret;
     }
 
 }
