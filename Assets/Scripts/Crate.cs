@@ -35,9 +35,8 @@ public class Crate : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         // Don't do anything if the item has alredy collided with this crate or others
-        if (ItemInCreates(collision.gameObject)) return;
+        if (ItemInOtherCrates(collision.gameObject)) return;
 
-        itemsInCrate.Add(collision.gameObject);
 
         if (gameObject.CompareTag(collision.gameObject.tag))
         {
@@ -51,18 +50,21 @@ public class Crate : MonoBehaviour
             gameObject.GetComponent<MeshRenderer>().material = incorrectMaterial;
         }
 
-        // Use Invoke to call function to revert to orig. material after 1s
-        Invoke("RevertOriginalMaterial", 1f);
+
+        itemsInCrate.Add(collision.gameObject);
+        Invoke(nameof(RevertOriginalMaterial), 1f);
     }
 
     void RevertOriginalMaterial()
     {
         gameObject.GetComponent<MeshRenderer>().material = originalMaterial;
     }
+
     public int GetCorrectItemScore()
     {
         return correctItems;
     }
+
     public int GetIncorrectItemScore()
     {
         return incorrectItems;
@@ -75,20 +77,17 @@ public class Crate : MonoBehaviour
 
     public void DestroyItems()
     {
-        //Set active or destroy?
-        foreach (GameObject item in itemsInCrate)
-            item.SetActive(false);
+        foreach (GameObject item in itemsInCrate) item.SetActive(false);
     }
 
     public bool IsItemInCrate(GameObject item)
     {
         return itemsInCrate.Contains(item);
     }
-    public bool ItemInCreates(GameObject item)
+    public bool ItemInOtherCrates(GameObject item)
     {
         bool ret = IsItemInCrate(item);
-        foreach (Crate crate in otherCrates)
-            ret = ret || crate.IsItemInCrate(item);
+        foreach (Crate crate in otherCrates)  ret = ret || crate.IsItemInCrate(item);
         return ret;
     }
 

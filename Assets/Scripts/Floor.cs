@@ -7,6 +7,9 @@ public class Floor : MonoBehaviour
     [SerializeField]
     Material incorrectMaterial;
 
+    [SerializeField]
+    Crate[] crates;
+
 
     Material originalMaterial;
     int itemsDropped;
@@ -28,6 +31,12 @@ public class Floor : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        // Check if item collided with a crate before falling to the floor, do nothing if so
+        GameObject item = collision.gameObject;
+        bool alreadySeen = crates[0].IsItemInCrate(item) || crates[1].IsItemInCrate(item) || crates[2].IsItemInCrate(item);
+        if (alreadySeen) return;
+
+
         GetComponent<MeshRenderer>().material = incorrectMaterial;
         Invoke(nameof(RevertToOriginalMaterial), 1f);
         itemsDropped++;
@@ -38,7 +47,7 @@ public class Floor : MonoBehaviour
         GetComponent<MeshRenderer>().material = originalMaterial;
     }
 
-    public int itemsOnFloor()
+    public int ItemsOnFloor()
     {
         return itemsDropped;
     }

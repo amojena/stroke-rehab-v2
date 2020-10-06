@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
-using UnityEngine.UI;
 
 public class CashierSceneManager : MonoBehaviour
 {
@@ -23,19 +21,26 @@ public class CashierSceneManager : MonoBehaviour
     [SerializeField]
     Belt belt;
 
+    // Cube that will on collision will allow to replay the game
+    [SerializeField]
+    GameObject restartCube;
+
     [SerializeField]
     Crate[] crates;
 
+    // Items that are available to spawn
     [SerializeField]
     GameObject[] items;
 
 
-
-    float spawnTime;
-    int itemsSpawned;
-    string[] tags = { "Fruit", "Vegetable", "Dairy" };
+    //Private variables
 
     int itemsInCrate;
+    int itemsSpawned;
+
+    float spawnTime; // stopwatch used to determine if it is time to spawn a new item
+
+    string[] tags = { "Fruit", "Vegetable", "Dairy" };
 
 
     // Start is called before the first frame update
@@ -53,7 +58,7 @@ public class CashierSceneManager : MonoBehaviour
         SpawnItem();
         CountItemsInCrates();
 
-        if (itemsInCrate + floor.itemsOnFloor() >= 12) GameOver();
+        if (itemsInCrate + floor.ItemsOnFloor() >= 12) GameOver();
         else UpdateScreenText(); // Format screen on text while game is going
 
 
@@ -69,8 +74,7 @@ public class CashierSceneManager : MonoBehaviour
     void CountItemsInCrates()
     {
         int totalItems = 0;
-        foreach (Crate crate in crates)
-            totalItems += crate.getNumOfItemsInCrate();
+        foreach (Crate crate in crates) totalItems += crate.getNumOfItemsInCrate();
         itemsInCrate = totalItems;
     }
 
@@ -98,9 +102,7 @@ public class CashierSceneManager : MonoBehaviour
             tags[j] = hold;
         }
 
-        for (int i = 0; i < 3; i++)
-            crates[i].tag = tags[i];
-
+        for (int i = 0; i < 3; i++)  crates[i].tag = tags[i];
     }
 
     void GameOver()
@@ -109,7 +111,7 @@ public class CashierSceneManager : MonoBehaviour
         float score = 0;
         int incorrect = 0; // useful?
         float accuracy;
-        int itemsOnFloor = floor.itemsOnFloor();
+        int itemsOnFloor = floor.ItemsOnFloor();
 
         foreach(Crate crate in crates)
         {
@@ -132,6 +134,8 @@ public class CashierSceneManager : MonoBehaviour
             crate.DestroyItems();
             crate.gameObject.SetActive(false);
         }
+
+        restartCube.SetActive(true);
     }
 
 }
