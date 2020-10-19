@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 137138091921545082}
   - component: {fileID: 137138092882321317}
   - component: {fileID: 2010184515}
+  - component: {fileID: 5479163754618020962}
+  - component: {fileID: 3988067599683916845}
   m_Layer: 0
   m_Name: Carrot
   m_TagString: Vegetable
@@ -111,3 +113,35 @@ CapsuleCollider:
   m_Height: 0.24
   m_Direction: 0
   m_Center: {x: -0.0028688759, y: 0.015986107, z: -0.000000092200935}
+--- !u!136 &5479163754618020962
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 137138091919542714}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.015
+  m_Height: 0.24
+  m_Direction: 0
+  m_Center: {x: -0.0028688759, y: 0.015986107, z: -0.000000092200935}
+--- !u!114 &3988067599683916845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 137138091919542714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02d61468f8b77ae4b92c344bc9a600fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_allowOffhandGrab: 1
+  m_snapPosition: 1
+  m_snapOrientation: 0
+  m_snapOffset: {fileID: 0}
+  m_grabPoints:
+  - {fileID: 2010184515}

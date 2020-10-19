@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 3813105001402442806}
   - component: {fileID: 3813105001530315248}
   - component: {fileID: 2348495728164440272}
+  - component: {fileID: 7385815243433521338}
+  - component: {fileID: -5543058437998237284}
   m_Layer: 0
   m_Name: Milk
   m_TagString: Dairy
@@ -110,3 +112,34 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.07114765, y: 0.2154388, z: 0.049103897}
   m_Center: {x: 0.0000000055879354, y: 0.1077194, z: 0}
+--- !u!65 &7385815243433521338
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3813105001404381942}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.07114765, y: 0.2154388, z: 0.049103897}
+  m_Center: {x: 0.0000000055879354, y: 0.1077194, z: 0}
+--- !u!114 &-5543058437998237284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3813105001404381942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02d61468f8b77ae4b92c344bc9a600fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_allowOffhandGrab: 1
+  m_snapPosition: 1
+  m_snapOrientation: 0
+  m_snapOffset: {fileID: 0}
+  m_grabPoints:
+  - {fileID: 2348495728164440272}

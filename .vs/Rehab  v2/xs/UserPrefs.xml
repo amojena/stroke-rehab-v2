@@ -1,8 +1,8 @@
 ﻿<Properties StartupConfiguration="{2F23F5D8-10B5-96FE-6449-A5D5DBF50AEF}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Belt.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Library/PackageCache/com.unity.xr.management@3.2.13/Editor/Metadata/XRPackageMetadata.cs">
     <Files>
-      <File FileName="Assets/Scripts/CashierManager.cs" Line="6" Column="2" />
       <File FileName="Assets/Scripts/Belt.cs" Line="39" Column="30" />
+      <File FileName="Library/PackageCache/com.unity.xr.management@3.2.13/Editor/Metadata/XRPackageMetadata.cs" Line="286" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -20,7 +20,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="61d9b4a4-e7b2-4884-b800-b84901c9ecb8" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="d57225ea-e605-4dc3-acb1-00c902fa1aa2" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

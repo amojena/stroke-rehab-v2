@@ -7,7 +7,7 @@ TagManager:
   - Fruit
   - Vegetable
   - Dairy
-  - Floor
+  - Crate
   layers:
   - Default
   - TransparentFX

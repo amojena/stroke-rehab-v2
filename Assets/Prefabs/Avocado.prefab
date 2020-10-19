@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 1793183618994953634}
   - component: {fileID: 1793183620052800342}
   - component: {fileID: 4595279355941467519}
+  - component: {fileID: -8633423724711536995}
+  - component: {fileID: -6163037071966752211}
   m_Layer: 0
   m_Name: Avocado
   m_TagString: Fruit
@@ -110,3 +112,34 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.07, y: 0.06, z: 0.12911817}
   m_Center: {x: -0.000364393, y: 0.032787494, z: 0.026912699}
+--- !u!65 &-8633423724711536995
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1793183618992751458}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.07, y: 0.06, z: 0.12911817}
+  m_Center: {x: -0.000364393, y: 0.032787494, z: 0.026912699}
+--- !u!114 &-6163037071966752211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1793183618992751458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02d61468f8b77ae4b92c344bc9a600fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_allowOffhandGrab: 1
+  m_snapPosition: 1
+  m_snapOrientation: 0
+  m_snapOffset: {fileID: 0}
+  m_grabPoints:
+  - {fileID: 4595279355941467519}

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Crate : MonoBehaviour
 {
@@ -23,7 +24,7 @@ public class Crate : MonoBehaviour
         incorrectItems = 0;
         itemsInCrate = new List<GameObject>();
         originalMaterial = gameObject.GetComponent<MeshRenderer>().material;
-
+        GetComponentInChildren<TextMeshPro>().text = tag;
     }
 
     // Update is called once per frame
@@ -70,7 +71,7 @@ public class Crate : MonoBehaviour
         return incorrectItems;
     }
 
-    public int getNumOfItemsInCrate()
+    public int GetNumOfItemsInCrate()
     {
         return itemsInCrate.Count;
     }
@@ -89,6 +90,12 @@ public class Crate : MonoBehaviour
         bool ret = IsItemInCrate(item);
         foreach (Crate crate in otherCrates)  ret = ret || crate.IsItemInCrate(item);
         return ret;
+    }
+
+    public void UpdateTagText(string newTag)
+    {
+        tag = newTag;
+        GetComponentInChildren<TextMeshPro>().text = tag;
     }
 
 }

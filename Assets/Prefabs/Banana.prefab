@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 4054723129774867591}
   - component: {fileID: -3787704607694112806}
   - component: {fileID: -8824732004067438165}
+  - component: {fileID: 4950988136922937749}
+  - component: {fileID: -4337451813623826331}
   m_Layer: 0
   m_Name: Banana
   m_TagString: Fruit
@@ -111,3 +113,35 @@ CapsuleCollider:
   m_Height: 0.26
   m_Direction: 2
   m_Center: {x: 0.009912879, y: 0.024258167, z: -0.0056370213}
+--- !u!136 &4950988136922937749
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4054723129776806469}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.03
+  m_Height: 0.26
+  m_Direction: 2
+  m_Center: {x: 0.009912879, y: 0.024258167, z: -0.0056370213}
+--- !u!114 &-4337451813623826331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4054723129776806469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02d61468f8b77ae4b92c344bc9a600fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_allowOffhandGrab: 1
+  m_snapPosition: 1
+  m_snapOrientation: 0
+  m_snapOffset: {fileID: 0}
+  m_grabPoints:
+  - {fileID: -8824732004067438165}

@@ -30,8 +30,12 @@ public class Belt : MonoBehaviour
 
     void MoveItemsOnBelt()
     {
-        foreach(GameObject item in itemsToMove)
-            item.transform.position = Vector3.Lerp(item.transform.position, endOfBelt.transform.position, speedFactor * Time.deltaTime);
+        float speed = 1 - speedFactor / 10;
+        foreach (GameObject item in itemsToMove)
+        {
+            //item.transform.position = Vector3.Lerp(item.transform.position, endOfBelt.transform.position, speedFactor * Time.deltaTime);
+            item.transform.position = Vector3.MoveTowards(item.transform.position, endOfBelt.transform.position, Time.deltaTime * speed);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
